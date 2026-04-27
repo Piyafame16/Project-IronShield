@@ -17,6 +17,6 @@ To address the challenges of real-time data, Project IronShield proposes a **Hyb
 3. **Tier 3 (Analytics):** High-fidelity AI Model processing for complex behavioral patterns.
 
 ## 📂 Repository Structure
-* `/data`: Synthetic dataset with realistic imbalanced classes and behavioral overlaps.
-* `/dashboard`: Interactive Tableau Workbook (.twbx) featuring Log-scale analysis and Median KPIs.
-* `/documents`: Project Canvas, Final Presentation (PDF), and Analysis Brief.
+* `/data`
+* `/dashboard`
+* `/documents`
