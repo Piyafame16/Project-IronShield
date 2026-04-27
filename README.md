@@ -10,11 +10,6 @@ APP Fraud (Voluntary Transfer) has become a critical threat. **IronShield** anal
 * **Loss Mitigation:** Reduce potential financial loss by 30% within the first 6 months of implementation.
 * **Efficiency:** Reduce manual investigation time by 40% through automated "High-Risk" tagging.
 
-## 🛠️ Project Architecture (Our Solution)
-To address the challenges of real-time data, Project IronShield proposes a **Hybrid Detection Pipeline**:
-1. **Tier 1 (Streaming):** Utilizing **Apache Kafka** to ingest real-time transaction data.
-2. **Tier 2 (Filtering):** Applying **Rule-based Thresholds** (e.g., Median-based Outliers) for low-latency filtering.
-3. **Tier 3 (Analytics):** High-fidelity AI Model processing for complex behavioral patterns.
 
 ## 📂 Repository Structure
 * `/data`
