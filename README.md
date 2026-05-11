@@ -24,9 +24,6 @@ To combat the 60-minute "Pass-Through" window, a real-time infrastructure is req
 * **Processing:** Stream processors to calculate features on the fly.
 * **Inference:** A scoring model to evaluate risk and trigger an **Auto-block or Hold** status within a **<100ms** latency window.
 
-![System Architecture](images/system_architecture.png)
-*Figure 3: Proposed Real-time Fraud Detection Pipeline.*
-
 ### 4. Introduce Dynamic Friction for High-Risk Transactions
 Apply "Strategic Friction" to high-stakes scenarios. For transactions where the Risk Score is high and the amount exceeds **500,000 Baht**, the system will implement a **30-minute delay** combined with a mandatory **outbound verification call** from staff.
 
