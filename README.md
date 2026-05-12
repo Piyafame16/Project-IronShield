@@ -20,7 +20,7 @@
 ## 🖼️ Project Canvas
 สามารถสรุปภาพรวมของโปรเจกต์ออกมาในรูปแบบ Project Canvas ได้ดังรูปนี้:
 
-![Project Canvas]("C:\Users\Areeya\Downloads\IronShield_Presentation.pptx.jpg")
+![Project Canvas]("Project-IronShield/ProjectCanvas.jpg")
 
 ## 🚀 Next Steps & Recommendations
 
