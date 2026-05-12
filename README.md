@@ -1,14 +1,26 @@
-# 🛡️ Project IronShield: Mule Account Detection Intelligence
+## 🛡️ Project IronShield: ระบบอัจฉริยะเพื่อการตรวจจับบัญชีม้า
+ยินดีต้อนรับสู่ **Project IronShield** ภารกิจของเราคือการปกป้องระบบนิเวศทางการธนาคารจากภัยคุกคามของ APP Fraud (การหลอกให้โอนเงิน) และเครือข่ายบัญชีม้า (Mule Account Networks) ด้วยการประยุกต์ใช้การวิเคราะห์พฤติกรรมขั้นสูง (Advanced Behavioral Analytics) และกลยุทธ์การตรวจจับเชิงรุก เพื่อสร้างความปลอดภัยที่เหนือกว่าในทุกการทำธุรกรรม
 
-Welcome to **Project IronShield**. Our mission is to protect the banking ecosystem from APP Fraud and Mule Account networks through advanced behavioral analytics and proactive detection strategies.
+## 🚀 บริบททางธุรกิจ (Bussiness Context)
+ปัจจุบันปัญหา **APP Fraud (Authorized Push Payment Fraud)** ทวีความรุนแรงขึ้น โดยมิจฉาชีพใช้เครือข่าย **บัญชีม้า (Mule Accounts)** เป็นกลไกหลักในการยักย้ายถ่ายเทเงินออกนอกระบบภายในเวลาอันรวดเร็ว (มักเกิดขึ้นภายในไม่กี่นาที)
 
-## 🚀 Business Context
-APP Fraud (Voluntary Transfer) has become a critical threat. **IronShield** analyzes "Voluntary" transaction patterns to distinguish between legitimate users and mule accounts, providing a balance between high-level security and seamless customer experience.
+ข้อจำกัดของระบบตรวจจับรูปแบบเดิม (Legacy Rule-based) คือความล่าช้าและอัตราการตรวจจับที่ต่ำ ส่งผลให้ไม่สามารถระงับธุรกรรมได้ทันท่วงที **Project IronShield** จึงถูกพัฒนาขึ้นเพื่อประยุกต์ใช้ Behavioral Analytics และระบบตรวจจับแบบ Real-time เพื่อวิเคราะห์รูปแบบความผิดปกติของธุรกรรมและระบุพฤติกรรมที่เข้าข่ายบัญชีม้า โดยมุ่งเน้นที่การลดอัตราความเสียหาย (Fraud Loss) และรักษาสมดุลของ False Positive Rate เพื่อไม่ให้กระทบต่อผู้ใช้งานปกติ
+
+## 🎯 วัตถุประสงค์ (Objectives)
+* พัฒนา Machine Learning Model เพื่อตรวจจับและจำแนกบัญชีม้าจากพฤติกรรมธุรกรรมที่ผิดปกติ
+* เพิ่มประสิทธิภาพการตรวจจับแบบ Real-time โดยเน้นการประมวลผลที่มีความหน่วงต่ำ (Low Latency)
+* สร้าง Behavioral Baseline เพื่อแยกแยะระหว่างผู้ใช้งานปกติและกลุ่มพฤติกรรมเสี่ยง
+* ลดมูลค่าความเสียหาย (Fraud Loss) ผ่านการระงับธุรกรรมในโซนอันตรายได้ทันท่วงที
 
 ## 🎯 SMART Objectives
-* **Recall Rate:** Identify > 85% of suspected mule accounts.
-* **Loss Mitigation:** Reduce potential financial loss by 30% within the first 6 months of implementation.
-* **Efficiency:** Reduce manual investigation time by 40% through automated "High-Risk" tagging.
+* **อัตราการตรวจจับ (Recall Rate):** สามารถระบุและตรวจพบบัญชีที่เข้าข่ายบัญชีม้า (Suspected Mule Accounts) ได้มากกว่า 85%
+* **การลดมูลค่าความเสียหาย (Loss Mitigation):** ลดมูลค่าความเสียหายทางการเงินที่อาจเกิดขึ้นลง 30% ภายใน 6 เดือนแรกหลังจากการเริ่มใช้งานระบบ
+* **ประสิทธิภาพการปฏิบัติงาน (Efficiency):** ลดระยะเวลาที่ใช้ในการตรวจสอบโดยเจ้าหน้าที่ (Manual Investigation) ลง 40% ด้วยการใช้ระบบคัดกรองและติดสถานะ "ความเสี่ยงสูง" (High-Risk Tagging) แบบอัตโนมัติ
+
+## 🖼️ Project Canvas
+สามารถสรุปภาพรวมของโปรเจกต์ออกมาในรูปแบบ Project Canvas ได้ดังรูปนี้:
+
+![Project Canvas]("C:\Users\Areeya\Downloads\IronShield_Presentation.pptx.jpg")
 
 ## 🚀 Next Steps & Recommendations
 
