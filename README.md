@@ -20,7 +20,7 @@ Traditional **rule-based detection systems** face limitations such as delays and
 ## 🖼️ Project Canvas
 The overall project can be summarized in a Project Canvas as illustrated below.
 
-![Project Canvas]("Project-IronShield/ProjectCanvas.jpg")
+![Project Canvas](ProjectCanvas.jpg)
 
 ## Dataset Overview
 This project simulates a realistic banking transaction environment for detecting suspicious mule account behavior and scam-induced transactions.
