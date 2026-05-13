@@ -246,14 +246,11 @@ To better understand mule account behavior and fraudulent transaction patterns, 
 This approach helps identify suspicious behavioral patterns from multiple perspectives: **Who, What, When, and How**.
 
 ---
-
+![W_Dashboard](W_Dashboard.png)
 ## WHO — Who are the suspicious accounts?
 
 ### Objective
 Identify accounts with unusually high transaction velocity.
-
-### Visualization
-**Top Accounts by Velocity**
 
 ### Key Findings
 - Several accounts showed significantly higher transaction frequencies than the dataset average.
@@ -274,9 +271,6 @@ Mule accounts often demonstrate:
 
 ### Objective
 Determine which transaction types are associated with the highest fraud rate.
-
-### Visualization
-**Transaction Type vs Fraud Rate**
 
 ### Key Findings
 | Transaction Type | Fraud Rate |
@@ -300,9 +294,6 @@ Determine which transaction types are associated with the highest fraud rate.
 
 ### Objective
 Analyze temporal transaction patterns and detect burst/spike behaviors.
-
-### Visualization
-**Spike/Burst Time Series Analysis**
 
 ### Key Findings
 - Fraud transactions did not occur randomly.
