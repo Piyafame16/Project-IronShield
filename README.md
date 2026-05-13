@@ -322,7 +322,7 @@ Understand how mule accounts move money through the banking system.
 - This indicates that mule accounts act as temporary transit accounts rather than storing money.
 
 ![Victim_Profiling](Victim_Profiling.png)
-### Victim Profiling: Amount Distribution
+### Victim Profiling
 
 ### Key Findings-Amount Distribution
 - Fraud transactions generally had a higher median transaction amount than normal transactions.
