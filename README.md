@@ -22,6 +22,159 @@ The overall project can be summarized in a Project Canvas as illustrated below.
 
 ![Project Canvas]("Project-IronShield/ProjectCanvas.jpg")
 
+## Dataset Overview
+This project simulates a realistic banking transaction environment for detecting suspicious mule account behavior and scam-induced transactions.
+The dataset is designed using a relational schema consisting of 8 interconnected tables, allowing behavioral, temporal, and risk-based analysis.
+
+The primary objective of the dataset is to support:
+
+* Exploratory Data Analysis (EDA)
+* Transaction velocity analysis
+* Mule account behavior detection
+* Fraud investigation simulation
+* Future machine learning development
+
+## Dataset Structure
+### 1. transaction_log
+**Purpose:**
+
+The core transactional table used to analyze money movement behavior and identify suspicious transaction patterns.
+
+**Data Dictionary**
+| Column Name             | Data Type | Description                                  |
+| ----------------------- | --------- | -------------------------------------------- |
+| `transaction_id`        | String    | Unique identifier for each transaction       |
+| `sender_account_id`     | String    | Account ID of the sender                     |
+| `receiver_account_id`   | String    | Account ID of the receiver                   |
+| `receiver_bank_code`    | String    | Receiving bank identifier                    |
+| `amount`                | Float     | Transaction amount                           |
+| `transaction_timestamp` | Datetime  | Date and time of the transaction             |
+| `transaction_type`      | String    | Type of transaction                          |
+| `channel_id`            | String    | Transaction channel                          |
+| `promptpay_id`          | String    | PromptPay number associated with transaction |
+| `is_high_risk_flag`     | Boolean   | Risk flag indicating suspicious activity     |
+| `Time_Gap_Minutes`      | Integer   | Time difference between transactions         |
+| `Final_Status`          | String    | Final classification status                  |
+
+### 2. account_master
+**Purpose:**
+
+Stores banking account information associated with each customer.
+
+**Data Dictionary**
+| Column Name      | Data Type | Description                    |
+| ---------------- | --------- | ------------------------------ |
+| `account_id`     | String    | Unique account identifier      |
+| `customer_id`    | String    | Linked customer identifier     |
+| `open_date`      | Date      | Account opening date           |
+| `account_type`   | String    | Type of bank account           |
+| `account_status` | String    | Current status of the account  |
+| `daily_limit`    | Integer   | Daily transaction limit amount |
+
+### 3. customer_profile
+**Purpose:**
+
+Contains demographic and customer-level profile information.
+
+**Data Dictionary**
+| Column Name        | Data Type | Description                  |
+| ------------------ | --------- | ---------------------------- |
+| `customer_id`      | String    | Unique customer identifier   |
+| `risk_level`       | String    | Customer risk classification |
+| `occupation`       | String    | Customer occupation          |
+| `monthly_income`   | Integer   | Monthly income amount        |
+| `age`              | Integer   | Customer age                 |
+| `address_province` | String    | Customer province/location   |
+
+### 4. session_device_log
+**Purpose:**
+
+Captures device and session-related behavioral signals during transactions.
+
+**Data Dictionary**
+| Column Name            | Data Type | Description                                             |
+| ---------------------- | --------- | ------------------------------------------------------- |
+| `session_id`           | String    | Unique session identifier                               |
+| `customer_id`          | String    | Linked customer identifier                              |
+| `device_id`            | String    | Unique device identifier                                |
+| `ip_address`           | String    | Device IP address                                       |
+| `gps_location`         | String    | GPS coordinates of device location                      |
+| `app_version`          | String    | Mobile banking application version                      |
+| `is_rooted_jailbroken` | Boolean   | Indicates whether device is rooted or jailbroken        |
+| `remote_app_detected`  | Boolean   | Indicates whether remote access application is detected |
+| `battery_level`        | Integer   | Device battery percentage                               |
+| `biometric_score`      | Float     | Biometric authentication confidence score               |
+
+#### 5. fraud_case_management
+**Purpose:**
+
+Represents fraud investigation outcomes and response actions generated from suspicious transactions.
+
+**Data Dictionary**
+| Column Name                     | Data Type | Description                                |
+| ------------------------------- | --------- | ------------------------------------------ |
+| `case_id`                       | String    | Unique fraud investigation case identifier |
+| `alert_id`                      | String    | Unique alert identifier                    |
+| `related_transaction_id`        | String    | Linked suspicious transaction ID           |
+| `alert_timestamp`               | Datetime  | Timestamp when fraud alert was triggered   |
+| `action_timestamp`              | Datetime  | Timestamp of fraud response action         |
+| `system_action`                 | String    | Action taken by fraud detection system     |
+| `is_hold_applied`               | Boolean   | Indicates whether account hold was applied |
+| `hold_duration_minutes`         | Integer   | Duration of account hold in minutes        |
+| `customer_response_during_hold` | String    | Customer response during hold period       |
+| `final_status`                  | String    | Final fraud investigation result           |
+| `fraud_type`                    | String    | Type/category of fraud                     |
+| `financial_impact`              | Float     | Estimated financial loss amount            |
+| `customer_feedback`             | String    | Customer feedback or scam report           |
+
+#### 6. external_blacklist
+**Purpose:**
+
+Simulates external high-risk account and blacklist intelligence sources.
+
+**Data Dictionary**
+| Column Name      | Data Type | Description                            |
+| ---------------- | --------- | -------------------------------------- |
+| `id_card_hash`   | String    | Masked or hashed national ID reference |
+| `account_number` | String    | Blacklisted bank account number        |
+| `source`         | String    | Source of blacklist information        |
+| `added_date`     | Datetime  | Date and time added to blacklist       |
+
+#### 7. call_center_logs
+**Purpose:**
+
+Stores customer interactions with the call center related to suspicious transactions, account verification, or scam reporting.
+
+**Data Dictionary**
+| Column Name              | Data Type | Description                           |
+| ------------------------ | --------- | ------------------------------------- |
+| `call_id`                | String    | Unique identifier for each call       |
+| `customer_id`            | String    | Linked customer identifier            |
+| `call_timestamp`         | Datetime  | Date and time of the call             |
+| `call_reason`            | String    | Reason for contacting the call center |
+| `call_duration_minutes`  | Integer   | Duration of the call in minutes       |
+| `agent_action`           | String    | Action taken by call center agent     |
+| `call_outcome`           | String    | Final outcome of the interaction      |
+| `related_transaction_id` | String    | Related suspicious transaction ID     |
+| `scam_reported_flag`     | Boolean   | Indicates whether scam was reported   |
+### 8. app_ui_logs
+**Purpose:**
+
+Captures user interaction behavior within the mobile banking application interface.
+
+**Data Dictionary**
+| Column Name              | Data Type | Description                          |
+| ------------------------ | --------- | ------------------------------------ |
+| `log_id`                 | String    | Unique UI log identifier             |
+| `customer_id`            | String    | Linked customer identifier           |
+| `session_id`             | String    | Associated session identifier        |
+| `event_timestamp`        | Datetime  | Timestamp of user interaction        |
+| `screen_name`            | String    | Application screen/page name         |
+| `button_clicked`         | String    | Button or UI element interacted with |
+| `time_spent_seconds`     | Integer   | Time spent on the screen             |
+| `navigation_sequence`    | String    | User navigation path within the app  |
+| `abnormal_behavior_flag` | Boolean   | Indicates suspicious UI behavior     |
+
 ## 🚀 Next Steps & Recommendations
 
 ### 1. Develop a Composite Risk Scoring Model
