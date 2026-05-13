@@ -190,6 +190,7 @@ Preprocessing Steps
 
 This ensures accurate calculations, filtering, and time-series analysis.
 
+![Data Type Validation](Data%20Type%20Validation.png)
 ### 2. Duplicate Column Check
 Checked for duplicated or redundant columns after importing data into Power Query
 Ensured that all attributes were uniquely defined and correctly mapped
@@ -221,6 +222,8 @@ Examples:
 * `battery_level` should be between 0–100
 * `biometric_score` should remain between 0–1
 * Transaction amounts should not contain impossible negative values
+
+![Data Range and Logical Validation](Data%20Range%20and%20Logical%20Validation.png)
 ### 6. Preservation of Suspicious Patterns
 * Abnormal or suspicious behavioral patterns were not removed during preprocessing
 * Instead of deleting unusual transactions, records were preserved for behavioral analysis related to mule account detection
