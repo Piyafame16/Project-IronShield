@@ -236,6 +236,127 @@ The final dataset is:
 * Free from major formatting issues
 * Suitable for behavioral analysis and visualization
 * Ready for future machine learning development and fraud detection tasks
+
+# Exploratory Data Analysis (EDA) using 5W1H Framework
+
+To better understand mule account behavior and fraudulent transaction patterns, we conducted Exploratory Data Analysis (EDA) using the **5W1H framework**.  
+This approach helps identify suspicious behavioral patterns from multiple perspectives: **Who, What, When, and How**.
+
+---
+
+## WHO — Who are the suspicious accounts?
+
+### Objective
+Identify accounts with unusually high transaction velocity.
+
+### Visualization
+**Top Accounts by Velocity**
+
+### Key Findings
+- Several accounts showed significantly higher transaction frequencies than the dataset average.
+- High-velocity accounts are potential **mule accounts**, which are commonly used to rapidly receive and transfer money.
+- After combining transaction data with customer profiles:
+  - **Employees** and **Students** appeared frequently among high-velocity accounts.
+  - This suggests that ordinary user accounts can potentially be exploited as temporary financial intermediaries.
+
+### Insight
+Mule accounts often demonstrate:
+- High transaction frequency
+- Repeated transfer behavior
+- Rapid movement of funds
+
+---
+
+## WHAT — What transaction types are most risky?
+
+### Objective
+Determine which transaction types are associated with the highest fraud rate.
+
+### Visualization
+**Transaction Type vs Fraud Rate**
+
+### Key Findings
+| Transaction Type | Fraud Rate |
+|------------------|------------|
+| Transfer         | ~46%       |
+| QR Payment       | ~29%       |
+| Top-up           | ~15%       |
+| Bill Payment     | ~10%       |
+
+### Insight
+- **Transfer** transactions had the highest fraud rate.
+- **QR payments** also showed elevated fraud activity.
+- These transaction channels are commonly used because they:
+  - Enable fast fund movement
+  - Are difficult to trace in real time
+  - Support quick pass-through behavior
+
+---
+
+## WHEN — When does fraud activity occur?
+
+### Objective
+Analyze temporal transaction patterns and detect burst/spike behaviors.
+
+### Visualization
+**Spike/Burst Time Series Analysis**
+
+### Key Findings
+- Fraud transactions did not occur randomly.
+- Suspicious activities appeared in concentrated bursts during specific periods.
+- Multiple transactions were often executed within very short time windows.
+
+### Insight
+This behavior reflects a common mule-account strategy:
+- Receive money
+- Quickly transfer funds onward
+- Reduce the risk of account freezing or detection
+
+---
+
+## HOW — How does the fraud behavior operate?
+
+### Objective
+Understand how mule accounts move money through the banking system.
+
+### Visualization
+- Inflow vs Outflow Time Gap
+- Victim Profiling: Amount Distribution
+
+### Key Findings
+
+#### Pass-Through Behavior
+- Most fraud transactions occurred within the **Pass-Through Zone (< 60 minutes)**.
+- Fraud accounts tended to transfer money out almost immediately after receiving funds.
+- This indicates that mule accounts act as temporary transit accounts rather than storing money.
+
+#### Amount Distribution
+- Fraud transactions generally had a higher median transaction amount than normal transactions.
+- However, there was still significant overlap between normal and fraud transaction amounts.
+- Some legitimate users also performed high-value transactions.
+
+### Insight
+Using only transaction amount thresholds is not sufficient for fraud detection.
+
+Effective mule-account detection should combine multiple behavioral signals, such as:
+- Transaction Velocity
+- Inflow-Outflow Time Gap
+- Transaction Channel
+- Transfer Patterns
+
+### Business Interpretation
+The analysis suggests that mule accounts exhibit:
+- High-speed money movement
+- Pass-through fund behavior
+- Rapid transaction chaining
+
+These behavioral patterns can support:
+- Auto-hold mechanisms
+- Real-time fraud alerts
+- Risk scoring systems
+
+
+These insights help support the development of more accurate fraud and mule-account detection systems.
 ## 🚀 Next Steps & Recommendations
 
 ### 1. Develop a Composite Risk Scoring Model
