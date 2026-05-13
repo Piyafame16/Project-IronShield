@@ -355,6 +355,36 @@ These behavioral patterns can support:
 - Real-time fraud alerts
 - Risk scoring systems
 
+# Error Analysis
+
+After conducting exploratory data analysis (EDA), several limitations and risk patterns were identified.  
+These findings highlight challenges in mule-account detection and suggest possible improvements for future systems.
+
+| Imperfection / Observation | Impact | Next Step |
+|---|---|---|
+| `is_high_risk_flag` still produced false negatives (FN) in some cases | Some suspicious accounts bypassed rule-based detection | Replace single-rule detection with **behavioral scoring models** |
+| Transaction amount overlap existed between Normal and Fraud cases | Fixed thresholds alone cannot reliably separate fraud from legitimate transactions | Use **composite scoring** combining amount, velocity, channel, and behavioral features |
+| Some fraud cases used low-to-medium transaction amounts (10k–80k) | Stealth / micro-structuring behavior becomes difficult to detect | Add **velocity analysis** and **pattern-based alerting** |
+| Certain fraud cases still resulted in financial loss despite hold mechanisms | Victims sometimes confirmed transactions themselves | Introduce **delay mechanisms**, outbound verification calls, or adaptive hold policies |
+| Real-time fraud detection architecture remains complex | Stream processing and low-latency scoring require higher infrastructure resources | Implement scalable streaming pipelines such as **Kafka → Stream Processing → Risk Scoring → Auto Blocking** |
+
+---
+
+## Key Insight
+
+The analysis suggests that mule-account detection should not rely on:
+- Single flags
+- Static thresholds
+- Amount-based rules alone
+
+Instead, effective fraud detection should incorporate:
+- Behavioral analytics
+- Velocity patterns
+- Pass-through behavior
+- Composite risk scoring
+- Real-time event processing
+
+This reflects real-world fraud systems, where suspicious behavior is identified through combinations of signals rather than a single condition.
 
 These insights help support the development of more accurate fraud and mule-account detection systems.
 ## 🚀 Next Steps & Recommendations
