@@ -1,24 +1,24 @@
-## 🛡️ Project IronShield: ระบบอัจฉริยะเพื่อการตรวจจับบัญชีม้า
-ยินดีต้อนรับสู่ **Project IronShield** ภารกิจของเราคือการปกป้องระบบนิเวศทางการธนาคารจากภัยคุกคามของ APP Fraud (การหลอกให้โอนเงิน) และเครือข่ายบัญชีม้า (Mule Account Networks) ด้วยการประยุกต์ใช้การวิเคราะห์พฤติกรรมขั้นสูง (Advanced Behavioral Analytics) และกลยุทธ์การตรวจจับเชิงรุก เพื่อสร้างความปลอดภัยที่เหนือกว่าในทุกการทำธุรกรรม
+## 🛡️ Project IronShield: Intelligent System for Mule Account Detection
+Welcome to **Project IronShield**. Our mission is to safeguard the banking ecosystem against the threats of APP Fraud (Authorized Push Payment Fraud) and Mule Account Networks by applying Advanced Behavioral Analytics and proactive detection strategies, ensuring superior security across all transactions.
 
-## 🚀 บริบททางธุรกิจ (Bussiness Context)
-ปัจจุบันปัญหา **APP Fraud (Authorized Push Payment Fraud)** ทวีความรุนแรงขึ้น โดยมิจฉาชีพใช้เครือข่าย **บัญชีม้า (Mule Accounts)** เป็นกลไกหลักในการยักย้ายถ่ายเทเงินออกนอกระบบภายในเวลาอันรวดเร็ว (มักเกิดขึ้นภายในไม่กี่นาที)
+## 🚀 Business Context
+The issue of **APP Fraud (Authorized Push Payment Fraud)** has become increasingly severe. Fraudsters exploit **Mule Accounts** as the primary mechanism to rapidly move funds out of the system—often within just a few minutes.
 
-ข้อจำกัดของระบบตรวจจับรูปแบบเดิม (Legacy Rule-based) คือความล่าช้าและอัตราการตรวจจับที่ต่ำ ส่งผลให้ไม่สามารถระงับธุรกรรมได้ทันท่วงที **Project IronShield** จึงถูกพัฒนาขึ้นเพื่อประยุกต์ใช้ Behavioral Analytics และระบบตรวจจับแบบ Real-time เพื่อวิเคราะห์รูปแบบความผิดปกติของธุรกรรมและระบุพฤติกรรมที่เข้าข่ายบัญชีม้า โดยมุ่งเน้นที่การลดอัตราความเสียหาย (Fraud Loss) และรักษาสมดุลของ False Positive Rate เพื่อไม่ให้กระทบต่อผู้ใช้งานปกติ
+Traditional **rule-based detection systems** face limitations such as delays and low detection rates, making them ineffective in stopping fraudulent transactions in time. **Project IronShield** was developed to leverage **Behavioral Analytics** and **Real-time Detection** to identify abnormal transaction patterns and flag mule-like behaviors. The focus is on reducing **fraud losses** while maintaining a balanced **false positive** rate to avoid disrupting legitimate users.
 
-## 🎯 วัตถุประสงค์ (Objectives)
-* พัฒนา Machine Learning Model เพื่อตรวจจับและจำแนกบัญชีม้าจากพฤติกรรมธุรกรรมที่ผิดปกติ
-* เพิ่มประสิทธิภาพการตรวจจับแบบ Real-time โดยเน้นการประมวลผลที่มีความหน่วงต่ำ (Low Latency)
-* สร้าง Behavioral Baseline เพื่อแยกแยะระหว่างผู้ใช้งานปกติและกลุ่มพฤติกรรมเสี่ยง
-* ลดมูลค่าความเสียหาย (Fraud Loss) ผ่านการระงับธุรกรรมในโซนอันตรายได้ทันท่วงที
+## 🎯Objectives
+* Develop a Machine Learning Model to detect and classify mule accounts based on abnormal transaction behaviors.
+* Enhance real-time detection efficiency with low latency processing.
+* Establish a Behavioral Baseline to distinguish normal users from high-risk behavioral groups.
+* Minimize fraud losses by promptly blocking transactions in high-risk zones.
 
 ## 🎯 SMART Objectives
-* **อัตราการตรวจจับ (Recall Rate):** สามารถระบุและตรวจพบบัญชีที่เข้าข่ายบัญชีม้า (Suspected Mule Accounts) ได้มากกว่า 85%
-* **การลดมูลค่าความเสียหาย (Loss Mitigation):** ลดมูลค่าความเสียหายทางการเงินที่อาจเกิดขึ้นลง 30% ภายใน 6 เดือนแรกหลังจากการเริ่มใช้งานระบบ
-* **ประสิทธิภาพการปฏิบัติงาน (Efficiency):** ลดระยะเวลาที่ใช้ในการตรวจสอบโดยเจ้าหน้าที่ (Manual Investigation) ลง 40% ด้วยการใช้ระบบคัดกรองและติดสถานะ "ความเสี่ยงสูง" (High-Risk Tagging) แบบอัตโนมัติ
+* **Detection Rate (Recall Rate):** Identify suspected mule accounts with accuracy above 85%.
+* **Loss Mitigation:** Reduce potential financial losses by 30% within the first six months of system deployment.
+* **Operational Efficiency:** Cut manual investigation time by 40% through automated screening and High-Risk Tagging.
 
 ## 🖼️ Project Canvas
-สามารถสรุปภาพรวมของโปรเจกต์ออกมาในรูปแบบ Project Canvas ได้ดังรูปนี้:
+The overall project can be summarized in a Project Canvas as illustrated below.
 
 ![Project Canvas]("Project-IronShield/ProjectCanvas.jpg")
 
