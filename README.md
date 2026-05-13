@@ -175,6 +175,67 @@ Captures user interaction behavior within the mobile banking application interfa
 | `navigation_sequence`    | String    | User navigation path within the app  |
 | `abnormal_behavior_flag` | Boolean   | Indicates suspicious UI behavior     |
 
+## Data Preprocessing
+
+Data preprocessing was performed using Power Query to validate data quality and ensure consistency before analysis.
+The preprocessing process focused on logical validation and data standardization while preserving suspicious behavioral patterns related to mule accounts.
+Preprocessing Steps
+### 1. Data Type Validation
+* Verified that each column had the correct data type
+* Examples:
+  * `transaction_timestamp` → Datetime
+  * `amount` → Numeric
+  * `age` → Integer
+  * `is_high_risk_flag` → Boolean
+
+This ensures accurate calculations, filtering, and time-series analysis.
+
+### 2. Duplicate Column Check
+Checked for duplicated or redundant columns after importing data into Power Query
+Ensured that all attributes were uniquely defined and correctly mapped
+### 3. Date and Time Standardization
+* Identified formatting inconsistencies in date-related columns
+
+Example:
+
+* `open_date` in `account_master` contained unnecessary time values such as `00:00:00`
+* Since account opening records only require the date component, the column was split and the time portion was removed
+
+This improves data consistency and avoids misleading temporal analysis.
+
+### 4. Duplicate Row Validation
+* Checked for duplicated records across tables
+* Ensured that primary identifiers such as:
+  * transaction_id
+  * account_id
+  * case_id
+
+remain unique
+
+### 5. Data Range and Logical Validation
+Validated whether numerical values fall within realistic and acceptable ranges
+
+Examples:
+
+* `age` should remain within a logical human age range
+* `battery_level` should be between 0–100
+* `biometric_score` should remain between 0–1
+* Transaction amounts should not contain impossible negative values
+### 6. Preservation of Suspicious Patterns
+* Abnormal or suspicious behavioral patterns were not removed during preprocessing
+* Instead of deleting unusual transactions, records were preserved for behavioral analysis related to mule account detection
+
+This is important because high-frequency or unusual transactions may represent meaningful fraud signals rather than data errors.
+
+## Preprocessing Outcome
+
+The final dataset is:
+
+* Structurally consistent
+* Logically validated
+* Free from major formatting issues
+* Suitable for behavioral analysis and visualization
+* Ready for future machine learning development and fraud detection tasks
 ## 🚀 Next Steps & Recommendations
 
 ### 1. Develop a Composite Risk Scoring Model
