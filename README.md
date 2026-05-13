@@ -313,18 +313,18 @@ This behavior reflects a common mule-account strategy:
 ### Objective
 Understand how mule accounts move money through the banking system.
 
-### Visualization
-- Inflow vs Outflow Time Gap
-- Victim Profiling: Amount Distribution
+![Inflow_Outflow](Inflow_Outflow.png)
+### Inflow vs Outflow Time Gap
 
-### Key Findings
-
-#### Pass-Through Behavior
+### Key Findings-Pass-Through Behavior
 - Most fraud transactions occurred within the **Pass-Through Zone (< 60 minutes)**.
 - Fraud accounts tended to transfer money out almost immediately after receiving funds.
 - This indicates that mule accounts act as temporary transit accounts rather than storing money.
 
-#### Amount Distribution
+![Victim_Profiling](Victim_Profiling.png)
+### Victim Profiling: Amount Distribution
+
+### Key Findings-Amount Distribution
 - Fraud transactions generally had a higher median transaction amount than normal transactions.
 - However, there was still significant overlap between normal and fraud transaction amounts.
 - Some legitimate users also performed high-value transactions.
